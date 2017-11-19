@@ -1,0 +1,897 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.owl-ontologies.com/Ontology1457533409.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:p2="http://www.owl-ontologies.com/Ontology1290308675.owl#"
+    xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+  xml:base="http://www.owl-ontologies.com/Ontology1457533409.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+    <owl:imports rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl"/>
+    <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="FeebleToNormalIntensity">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#MorningTemplate"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="lightIntensitySuitableForTemplate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DynamicIntensity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MiddleToColdHue">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DynamicHue"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#CareForTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#CryTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DisAgreeTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="lightSuitableForTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="lightSuitableForTemplate"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AlarmTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AnxiousTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#BlameTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#CollideTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DoubtTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DreadTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#PityTemplate"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FeebleIntensity">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AlarmTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AnxiousTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#BlameTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#CollideTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DoubtTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DreadTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#PityTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Self_faultTemplate"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightIntensitySuitableForTemplate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StaticIntensity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ColdHue">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StaticHue"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AngryTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GriefTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#CareForTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#CryTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DisAgreeTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#WorryTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#NegateWordTemplate"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTemplate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AmbientLight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="LightType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpotLight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LightType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WarmToColdHue">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicHue"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#RegretTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SeparateTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#PityTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTemplate"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Self_faultTemplate"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PointLight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LightType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FeebleToStrongIntensity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicIntensity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AreaLight">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LightType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ColdToWarmHue">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicHue"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AgreeTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#RemindTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTemplate"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#ComfortTemplate"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LightHue">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="NewLight"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NormalToFeebleIntensity">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#NightTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#LateNightTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AlarmTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AnxiousTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#BlameTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#CollideTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DoubtTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DreadTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#PityTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Self_faultTemplate"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightIntensitySuitableForTemplate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicIntensity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#LightType">
+    <rdfs:subClassOf rdf:resource="#NewLight"/>
+  </owl:Class>
+  <owl:Class rdf:about="#StaticIntensity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="LightIntensity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WarmToMiddleHue">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicHue"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="StrongIntensity">
+    <rdfs:subClassOf rdf:resource="#StaticIntensity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="InAndOutSideLayout">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="LightLayout"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TextLayout">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LightLayout"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#StaticHue">
+    <rdfs:subClassOf rdf:resource="#LightHue"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ColdToMiddleHue">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicHue"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#QuestionTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DirectionLight">
+    <rdfs:subClassOf rdf:resource="#LightType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NormalIntensity">
+    <rdfs:subClassOf rdf:resource="#StaticIntensity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NormalToStrongIntensity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicIntensity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="StrongToFeebleIntensity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicIntensity"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#EveningNightTemplate"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightIntensitySuitableForTemplate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MiddleHue">
+    <rdfs:subClassOf rdf:resource="#StaticHue"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WarmHue">
+    <rdfs:subClassOf rdf:resource="#StaticHue"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SmileTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SurpriseTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTemplate"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PositiveWordTemplate"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="OutSideLayout">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LightLayout"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DynamicIntensity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#LightIntensity"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#LightIntensity">
+    <rdfs:subClassOf rdf:resource="#NewLight"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StrongToNormalIntensity">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#EveningNightTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DayTimeTemplate"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightIntensitySuitableForTemplate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DynamicIntensity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DynamicHue">
+    <rdfs:subClassOf rdf:resource="#LightHue"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NormalToFeeblerIntensity">
+    <rdfs:subClassOf rdf:resource="#DynamicIntensity"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightIntensitySuitableForTemplate"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#EveningNightTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#NightTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#LateNightTemplate"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#LightLayout">
+    <rdfs:subClassOf rdf:resource="#NewLight"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="lightLayoutSuitableMaPlace"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PlotDescription"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MiddleToWarmHue">
+    <rdfs:subClassOf rdf:resource="#DynamicHue"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SmileTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SurpriseTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#AgreeTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#BlessingTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#RemindTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#MissTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DesireTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GladnessTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#LikeTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#MissTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#PromisesTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SurpriseTemplate"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#ThankTemplate"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#lightSuitableForTemplate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="VolumeLight">
+    <rdfs:subClassOf rdf:resource="#LightType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="InSideLayout">
+    <rdfs:subClassOf rdf:resource="#LightLayout"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#lightIntensitySuitableForTemplate">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#Template"/>
+    <rdfs:domain rdf:resource="#LightIntensity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#lightLayoutSuitableMaPlace">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PlaceDescription"/>
+    <rdfs:domain rdf:resource="#LightLayout"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#lightSuitableForTopic">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#Topic"/>
+    <rdfs:domain rdf:resource="#NewLight"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#lightSuitableForTemplate">
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#Template"/>
+    <rdfs:domain rdf:resource="#LightHue"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="lightLayoutContainLight">
+    <rdfs:range rdf:resource="#LightType"/>
+    <rdfs:domain rdf:resource="#LightLayout"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="lightHue_2">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >cold</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >middle</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >warm</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#LightHue"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="isDynamic">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >yes</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >no</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#NewLight"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lightIntensity2">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >feeble</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >normal</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >feebler</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >strong</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#LightIntensity"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lightIntensity1">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >feeble</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >strong</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >feebler</rdf:first>
+              </rdf:rest>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >normal</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#LightIntensity"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lightHue_1">
+    <rdfs:domain rdf:resource="#LightHue"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >warm</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >middle</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >cold</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <NormalToFeeblerIntensity rdf:ID="NormalToFeeblerIntensity_1">
+    <lightIntensity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >feebler</lightIntensity2>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dinnerTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sundownTemplate"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#fallingStarTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#starTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#nightTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#foodLateNightTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sleepTemplate"/>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >normal</lightIntensity1>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dreamTemplate"/>
+  </NormalToFeeblerIntensity>
+  <p2:Class_7 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_7_8"/>
+  <DirectionLight rdf:ID="directionLight_1"/>
+  <InSideLayout rdf:ID="InSideLayout1">
+    <lightLayoutContainLight>
+      <AmbientLight rdf:ID="ambientLightIn_1"/>
+    </lightLayoutContainLight>
+    <lightLayoutContainLight>
+      <PointLight rdf:ID="pointLightIn_1"/>
+    </lightLayoutContainLight>
+    <lightLayoutSuitableMaPlace rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#inDoorDescription"/>
+  </InSideLayout>
+  <p2:Class_2 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_2_4"/>
+  <OutSideLayout rdf:ID="outSideLayout1">
+    <lightLayoutSuitableMaPlace rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#outDoorDescription"/>
+    <lightLayoutContainLight>
+      <AmbientLight rdf:ID="ambientLightOut_1"/>
+    </lightLayoutContainLight>
+    <lightLayoutContainLight>
+      <PointLight rdf:ID="pointLightOut_1"/>
+    </lightLayoutContainLight>
+  </OutSideLayout>
+  <NormalToFeebleIntensity rdf:ID="normalToFeebleIntensity_1">
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#alarmTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#fallingStarTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#blameTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#doubtTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#foodLateNightTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#nightTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#pityTemplate"/>
+    <lightIntensity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >feeble</lightIntensity2>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#anxiousTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dreamTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#collideTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dreadTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sadTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sleepTemplate"/>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >normal</lightIntensity1>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#starTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#regretTemplate"/>
+  </NormalToFeebleIntensity>
+  <p2:Class_2 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_2_3"/>
+  <p2:ModelModelInAir rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#ModelModelInAir_23"/>
+  <InAndOutSideLayout rdf:ID="InAndOutSideLayout1">
+    <lightLayoutContainLight rdf:resource="#ambientLightOut_1"/>
+    <lightLayoutContainLight rdf:resource="#ambientLightIn_1"/>
+    <lightLayoutContainLight rdf:resource="#pointLightIn_1"/>
+    <lightLayoutContainLight rdf:resource="#pointLightOut_1"/>
+  </InAndOutSideLayout>
+  <p2:Class_5 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_5_6"/>
+  <p2:Class_7 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_7_9"/>
+  <VolumeLight rdf:ID="volumeLight_1"/>
+  <p2:Class_48 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_48_49"/>
+  <p2:ModelModelInAir rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#ModelModelInAir_25"/>
+  <p2:Class_4 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_4_5"/>
+  <p2:Class_1 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_1_5"/>
+  <p2:Class_16 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_16_20"/>
+  <p2:ModelModelInAir rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#ModelModelInAir_24"/>
+  <p2:Class_1 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_1_6"/>
+  <WarmToColdHue rdf:ID="warmToColdHue_1">
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PityTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SeparateTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#RegretTopicIndividual"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sadTemplate"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#regretTemplate"/>
+    <lightHue_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cold</lightHue_2>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >warm</lightHue_1>
+  </WarmToColdHue>
+  <FeebleToNormalIntensity rdf:ID="feebleToNormalIntensity_1">
+    <lightIntensity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >normal</lightIntensity2>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >feeble</lightIntensity1>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#breakfastTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#daybreakTemplate"/>
+  </FeebleToNormalIntensity>
+  <p2:Class_26 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_26_28"/>
+  <owl:Restriction>
+    <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#EveningNightTemplate"/>
+    <owl:onProperty rdf:resource="#lightIntensitySuitableForTemplate"/>
+  </owl:Restriction>
+  <FeebleToStrongIntensity rdf:ID="feebleToStrongIntensity_1">
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightIntensity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >strong</lightIntensity2>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >feeble</lightIntensity1>
+  </FeebleToStrongIntensity>
+  <StrongToNormalIntensity rdf:ID="strongToNormalIntensity_1">
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >strong</lightIntensity1>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightIntensity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >feeble</lightIntensity2>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dinnerTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#afternoonTemplate"/>
+  </StrongToNormalIntensity>
+  <p2:Class_26 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_26_27"/>
+  <p2:Class_3 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_3_4"/>
+  <ColdToWarmHue rdf:ID="coldToWarmHue_1">
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#AgreeTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#RemindTopicIndividual"/>
+    <lightHue_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >warm</lightHue_2>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cold</lightHue_1>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#comfortTemplate"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+  </ColdToWarmHue>
+  <WarmHue rdf:ID="warmHue_1">
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#positiveWordTemplate"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >no</isDynamic>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SurpriseTopicindividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SmileTopicIndividual"/>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >warm</lightHue_1>
+  </WarmHue>
+  <p2:Class_48 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_48_50"/>
+  <ColdHue rdf:ID="coldHue_1">
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#CareForTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#CryTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GriefTopicIndividual"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >no</isDynamic>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#negateWordTemplate"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTopicIndividual"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#alarmTemplate"/>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cold</lightHue_1>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#AngryTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#WorryTopicIndividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#DisAgreeTopicIndividual"/>
+  </ColdHue>
+  <owl:Restriction>
+    <owl:onProperty rdf:resource="#lightIntensitySuitableForTemplate"/>
+    <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#EveningNightTemplate"/>
+  </owl:Restriction>
+  <NormalIntensity rdf:ID="normalIntensity_1">
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >no</isDynamic>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >normal</lightIntensity1>
+  </NormalIntensity>
+  <p2:Class_1 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_1_2"/>
+  <SpotLight rdf:ID="spotLight_1"/>
+  <WarmToMiddleHue rdf:ID="warmToMiddleHue_1">
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightHue_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >middle</lightHue_2>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >warm</lightHue_1>
+  </WarmToMiddleHue>
+  <p2:Class_1 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_1_3"/>
+  <NormalToStrongIntensity rdf:ID="normalToStrongIntensity_1">
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#forenoonTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#comfortTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#thankTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sunshineTemplate"/>
+    <lightIntensity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >strong</lightIntensity2>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >normal</lightIntensity1>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#missTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#gladnessTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#likeTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#promisesTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#surpriseTemplate"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#desireTemplate"/>
+  </NormalToStrongIntensity>
+  <p2:Class_1 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_1_4"/>
+  <StrongToFeebleIntensity rdf:ID="strongToFeebleIntensity_1">
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sundownTemplate"/>
+    <lightIntensity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >feebler</lightIntensity2>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >strong</lightIntensity1>
+  </StrongToFeebleIntensity>
+  <p2:Class_16 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_16_19"/>
+  <p2:Class_17 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_17_19"/>
+  <MiddleToWarmHue rdf:ID="middleToWarmHue_1">
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#gladnessTemplate"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#AgreeTopicIndividual"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#promisesTemplate"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#missTemplate"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SurpriseTopicindividual"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopicIndividual"/>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >middle</lightHue_1>
+    <lightHue_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >warm</lightHue_2>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SmileTopicIndividual"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#desireTemplate"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#RemindTopicIndividual"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#likeTemplate"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sadTemplate"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#surpriseTemplate"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#MissTopicIndividual"/>
+  </MiddleToWarmHue>
+  <TextLayout rdf:ID="TextLayout_1"/>
+  <AreaLight rdf:ID="AreaLight_1"/>
+  <FeebleIntensity rdf:ID="feebleIntensity_1">
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sadTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dreadTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#collideTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#blameTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#regretTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#pityTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#alarmTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#anxiousTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#doubtTemplate"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >no</isDynamic>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >feeble</lightIntensity1>
+  </FeebleIntensity>
+  <owl:Restriction>
+    <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#EveningNightTemplate"/>
+    <owl:onProperty rdf:resource="#lightIntensitySuitableForTemplate"/>
+  </owl:Restriction>
+  <ColdToMiddleHue rdf:ID="coldToMiddleHue_1">
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#QuestionTopicIndividual"/>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cold</lightHue_1>
+    <lightHue_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >middle</lightHue_2>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+  </ColdToMiddleHue>
+  <StrongIntensity rdf:ID="strongIntensity_1">
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#comfortTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#missTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#likeTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#thankTemplate"/>
+    <lightIntensity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >strong</lightIntensity1>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#desireTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#surpriseTemplate"/>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#gladnessTemplate"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >no</isDynamic>
+    <lightIntensitySuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#promisesTemplate"/>
+  </StrongIntensity>
+  <MiddleHue rdf:ID="middleHue_1">
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >no</isDynamic>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >middle</lightHue_1>
+  </MiddleHue>
+  <p2:Class_17 rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#Class_17_18"/>
+  <MiddleToColdHue rdf:ID="middleToColdHue_1">
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#CryTopicIndividual"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dreadTemplate"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#CareForTopicIndividual"/>
+    <isDynamic rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >yes</isDynamic>
+    <lightHue_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cold</lightHue_2>
+    <lightHue_1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >middle</lightHue_1>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#collideTemplate"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#alarmTemplate"/>
+    <lightSuitableForTopic rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#DisAgreeTopicIndividual"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#doubtTemplate"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#blameTemplate"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#anxiousTemplate"/>
+    <lightSuitableForTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#pityTemplate"/>
+  </MiddleToColdHue>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

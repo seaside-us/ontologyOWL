@@ -1,0 +1,7 @@
+20170504（蒋）：1.SP_mount25_A (xyzwhd): 5.669  -48.790  -41.110  160.86  0  219.502
+                2.M_boat1的hasnodename改为M_boat1
+                3.更改黄磊师兄给的M_computer_desk为M_computer，并对应更改其数据
+
+20170505 1.添加李晶的newFire/createFire
+	 2.为boatingActionTopic类添加chineseName属性“划船"
+	 3.为reminderTopic添加主题相关场景(hasMa)
