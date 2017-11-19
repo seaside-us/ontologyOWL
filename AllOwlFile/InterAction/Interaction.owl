@@ -24,6 +24,9 @@
   </owl:Class>
   <owl:Class rdf:ID="RenderAction">
     <rdfs:subClassOf>
+      <owl:Class rdf:ID="ExcuteAction"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
           <owl:Class>
@@ -37,9 +40,6 @@
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="ExcuteAction"/>
-    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="SportAction">
     <rdfs:subClassOf>
@@ -48,13 +48,13 @@
   </owl:Class>
   <owl:Class rdf:ID="PlayBasketballAction">
     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BasketballActionTopic"/>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
-      </owl:Restriction>
+      <owl:Class rdf:ID="PlayAction"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:ID="PlayAction"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BasketballActionTopic"/>
+      </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="CatchFootballAction">
@@ -69,9 +69,6 @@
   </owl:Class>
   <owl:Class rdf:ID="CatchSmallSomthingAction">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#CatchAction"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
           <owl:Class>
@@ -84,11 +81,11 @@
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CatchAction"/>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="DanceAction">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#ExcuteAction"/>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
@@ -103,11 +100,11 @@
         </owl:someValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="AngryAction">
     <rdfs:subClassOf>
       <owl:Class rdf:about="#ExcuteAction"/>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AngryAction">
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
@@ -123,6 +120,9 @@
           </owl:Class>
         </owl:someValuesFrom>
       </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ExcuteAction"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="FindAction">
@@ -141,6 +141,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="PhoneAction">
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
@@ -158,7 +159,6 @@
         </owl:someValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="WalkLegAction">
     <rdfs:subClassOf rdf:resource="#PathAction"/>
@@ -185,32 +185,32 @@
     <rdfs:subClassOf rdf:resource="#Interaction"/>
   </owl:Class>
   <owl:Class rdf:ID="DrinkAction">
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#EatingActionTopic"/>
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#EatingActionTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="RefuseAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#DisAgreeTopic"/>
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="CatchBaseballAction">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#CatchAction"/>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PingPongActionTopic"/>
+      </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PingPongActionTopic"/>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
-      </owl:Restriction>
+      <owl:Class rdf:about="#CatchAction"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="FootballAction">
@@ -219,9 +219,9 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="RestAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -232,17 +232,17 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:about="#CompleteAction">
     <rdfs:subClassOf rdf:resource="#Interaction"/>
   </owl:Class>
   <owl:Class rdf:about="#CatchAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -252,14 +252,14 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="GreetAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -270,26 +270,24 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="PlayBaseballAction">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#PlayAction"/>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PingPongActionTopic"/>
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PlayAction"/>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="ShakeAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -299,19 +297,17 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:about="#BallAction">
     <rdfs:subClassOf rdf:resource="#PrepareAction"/>
   </owl:Class>
   <owl:Class rdf:ID="ThrowSmallSomthingAction">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#PlayAction"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -320,11 +316,14 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PlayAction"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#PlayAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
@@ -339,6 +338,7 @@
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="PlayFootballAction">
     <rdfs:subClassOf rdf:resource="#PlayAction"/>
@@ -353,10 +353,8 @@
     <rdfs:subClassOf rdf:resource="#PathAction"/>
   </owl:Class>
   <owl:Class rdf:ID="RegretAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -368,14 +366,15 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="WaitAction">
     <rdfs:subClassOf rdf:resource="#PrepareAction"/>
   </owl:Class>
   <owl:Class rdf:ID="SearchAction">
-    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#actionSuitableForTopic"/>
@@ -390,6 +389,7 @@
         </owl:someValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ExcuteAction"/>
   </owl:Class>
   <owl:Class rdf:ID="ModestAction">
     <rdfs:subClassOf rdf:resource="#CompleteAction"/>
@@ -686,13 +686,32 @@
         <j.0:maFrameNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >280</j.0:maFrameNumber>
         <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >dialingphone_150</PreAction>
-        <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >NormalWait_150</PreAction>
+        <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >dialingphone_150</PreAction>
         <contactRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Side</contactRange>
         <order rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >before</order>
+        <InterAction>
+          <RegretAction rdf:ID="Crying">
+            <InterAction rdf:resource="#Angrying"/>
+            <j.0:maFrameNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >180</j.0:maFrameNumber>
+            <j.0:chineseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >哭泣</j.0:chineseName>
+            <order rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >after</order>
+            <contactRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Side</contactRange>
+            <ComplishAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >bow_200</ComplishAction>
+            <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ByeWithWalkLeg_150</PreAction>
+            <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >RelaxedWalk_150</PreAction>
+          </RegretAction>
+        </InterAction>
         <InterAction>
           <AngryAction rdf:ID="Angrying2">
             <ComplishAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -713,25 +732,6 @@
             <contactRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >Side</contactRange>
           </AngryAction>
-        </InterAction>
-        <InterAction>
-          <RegretAction rdf:ID="Crying">
-            <InterAction rdf:resource="#Angrying"/>
-            <j.0:maFrameNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-            >180</j.0:maFrameNumber>
-            <j.0:chineseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >哭泣</j.0:chineseName>
-            <order rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >after</order>
-            <contactRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >Side</contactRange>
-            <ComplishAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >bow_200</ComplishAction>
-            <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >RelaxedWalk_150</PreAction>
-            <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >ByeWithWalkLeg_150</PreAction>
-          </RegretAction>
         </InterAction>
         <j.0:chineseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >生气</j.0:chineseName>
@@ -858,9 +858,9 @@
   </PostexerciseAction>
   <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SleepTemplate">
     <mapToInterAction>
-      <DrinkAction rdf:ID="LeftLegPass2">
+      <RenderAction rdf:ID="LeftLegPass2">
         <InterAction>
-          <DrinkAction rdf:ID="LeftLegPass1">
+          <RenderAction rdf:ID="LeftLegPass1">
             <InteractionObject rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >Adjacent</InteractionObject>
             <j.0:maFrameNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -870,12 +870,12 @@
             <InterAction rdf:resource="#LeftLegPass2"/>
             <PreAction rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >PushCoffee_184</PreAction>
-            <rdf:type rdf:resource="#RenderAction"/>
+            <rdf:type rdf:resource="#DrinkAction"/>
             <contactRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >M_teaset</contactRange>
             <j.0:chineseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
             >左手递东西</j.0:chineseName>
-          </DrinkAction>
+          </RenderAction>
         </InterAction>
         <j.0:chineseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >左手递东西</j.0:chineseName>
@@ -889,8 +889,8 @@
         >YawnAction_184</PreAction>
         <contactRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Adjacent</contactRange>
-        <rdf:type rdf:resource="#RenderAction"/>
-      </DrinkAction>
+        <rdf:type rdf:resource="#DrinkAction"/>
+      </RenderAction>
     </mapToInterAction>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#BowIndividual">
