@@ -1,4 +1,4 @@
-; Sun Nov 19 17:22:41 GMT+08:00 2017
+; Mon Nov 20 20:33:19 GMT+08:00 2017
 ; 
 ;+ (version "3.4.4")
 ;+ (build "Build 579")
@@ -6,55 +6,55 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[camera_ProjectKB_Class18]
-		[camera_ProjectKB_Class19]
-		[camera_ProjectKB_Class20]
-		[camera_ProjectKB_Class21]
-		[camera_ProjectKB_Class22]))
+		[camera_ProjectKB_Class10]
+		[camera_ProjectKB_Class11]
+		[camera_ProjectKB_Class12]
+		[camera_ProjectKB_Class13]
+		[camera_ProjectKB_Class14]))
 
-([camera_ProjectKB_Class10890] of  Property_List
-)
-
-([camera_ProjectKB_Class18] of  String
+([camera_ProjectKB_Class10] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Class")
 	(string_value "%3ANAME"))
 
-([camera_ProjectKB_Class19] of  String
+([camera_ProjectKB_Class10890] of  Property_List
+)
+
+([camera_ProjectKB_Class11] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([camera_ProjectKB_Class20] of  String
+([camera_ProjectKB_Class12] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([camera_ProjectKB_Class21] of  String
+([camera_ProjectKB_Class13] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([camera_ProjectKB_Class22] of  String
+([camera_ProjectKB_Class14] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Thing")
 	(string_value "%3ANAME"))
 
-([camera_ProjectKB_Class23] of  Map_Entry
+([camera_ProjectKB_Class15] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([camera_ProjectKB_Class24] of  Map_Entry
+([camera_ProjectKB_Class16] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([camera_ProjectKB_Class25] of  Map_Entry
+([camera_ProjectKB_Class17] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
@@ -965,9 +965,9 @@
 ([KB_325529_Class0] of  Map
 
 	(entries
-		[camera_ProjectKB_Class23]
-		[camera_ProjectKB_Class24]
-		[camera_ProjectKB_Class25]))
+		[camera_ProjectKB_Class15]
+		[camera_ProjectKB_Class16]
+		[camera_ProjectKB_Class17]))
 
 ([KB_325529_Class4] of  String
 
@@ -986,7 +986,7 @@
 	(property_list [XY_Instance_890])
 	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
 
-([KB_507209_Class3] of  Map
+([KB_495667_Class3] of  Map
 )
 
 ([KB_620008_Class1] of  Widget
@@ -5881,8 +5881,8 @@
 		":MODIFIER"
 		"http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS"
 		"http://www.w3.org/2000/01/rdf-schema#Container"
-		"http://www.w3.org/2001/XMLSchema#integer"
 		":SLOT-NUMERIC-MINIMUM"
+		"http://www.w3.org/2001/XMLSchema#integer"
 		"http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
 		":NUMERIC-MAXIMUM"
@@ -5921,9 +5921,9 @@
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSubclassOf"
 		"http://www.w3.org/2003/11/swrl#SameIndividualAtom"
 		":PAL-DESCRIPTION"
-		"http://www.w3.org/2001/XMLSchema#anyURI"
 		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
 		"http://www.w3.org/2002/07/owl#AnonymousClass"
+		"http://www.w3.org/2001/XMLSchema#anyURI"
 		"http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
 		":CLASS"
 		"http://www.w3.org/2002/07/owl#complementOf"
@@ -5946,8 +5946,8 @@
 		":MODIFICATION-TIMESTAMP"
 		"http://www.w3.org/2001/XMLSchema#gYear"
 		"http://www.w3.org/2001/XMLSchema#gMonthDay"
-		"http://www.w3.org/2001/XMLSchema#normalizedString"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+		"http://www.w3.org/2001/XMLSchema#normalizedString"
 		"http://www.w3.org/2001/XMLSchema#nonPositiveInteger"
 		"http://www.w3.org/2002/07/owl#someValuesFrom"
 		"http://protege.stanford.edu/plugins/owl/protege#classificationStatus"

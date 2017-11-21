@@ -1,108 +1,50 @@
 <?xml version="1.0"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
-    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
-    xmlns:p3="http://www.owl-ontologies.com/Ontology1306283939.owl#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns="http://www.owl-ontologies.com/Ontology1448934359.owl#"
-    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
     xmlns:p2="http://www.owl-ontologies.com/Ontology1290308675.owl#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:p3="http://www.owl-ontologies.com/Ontology1306283939.owl#"
     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+    xmlns="http://www.owl-ontologies.com/Ontology1448934359.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xml:base="http://www.owl-ontologies.com/Ontology1448934359.owl">
   <owl:Ontology rdf:about="">
     <owl:imports rdf:resource="http://www.owl-ontologies.com/OntologyActionFogExpression.owl"/>
   </owl:Ontology>
-  <owl:Class rdf:ID="BasketballEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="BallEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BasketballAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BasketballActionTopic"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isInteractive"/>
-        </owl:onProperty>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >false</owl:hasValue>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="WaterEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="SportEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasResult"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="HappyEvent"/>
-              <owl:Class rdf:ID="Static_GladEvent"/>
-              <owl:Class rdf:ID="CryEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:ID="SadEvent"/>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasNextEvent"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="PayEvent">
+  <owl:Class rdf:ID="WalkEvent">
     <rdfs:subClassOf>
       <owl:Class rdf:ID="DailyEvent"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#PayAction"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#WalkAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ShakeEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DailyEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ShakeAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#ShoppingActionTopic"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:ID="WalkEvent"/>
-        </owl:someValuesFrom>
+        <owl:someValuesFrom rdf:resource="#WalkEvent"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="hasPreEvent"/>
         </owl:onProperty>
@@ -111,37 +53,30 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+          <owl:ObjectProperty rdf:ID="hasEffect"/>
         </owl:onProperty>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >true</owl:hasValue>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="HappyEvent"/>
+        </owl:someValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#HappyEvent"/>
-              <owl:Class rdf:about="#Static_GladEvent"/>
-              <owl:Class rdf:about="#SadEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasResult"/>
+          <owl:DatatypeProperty rdf:ID="isInteractive"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="Distence"/>
-  <owl:Class rdf:ID="BodybuilderEvent">
+  <owl:Class rdf:ID="SkiingEvent">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
+      <owl:Class rdf:ID="WaterEvent"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BodybuilderAction"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SkiingAction"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
@@ -149,16 +84,134 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#WaterActionTopic"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WarmUpEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SportEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#WarmupAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasNextEvent"/>
+        </owl:onProperty>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#BallEvent"/>
-              <owl:Class rdf:ID="BodyMechanicsEvent"/>
+              <owl:Class rdf:ID="BallEvent"/>
+              <owl:Class rdf:ID="RunEvent"/>
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PityEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEffect"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="PingPongEvent"/>
+              <owl:Class rdf:ID="BasketballEvent"/>
+              <owl:Class rdf:ID="FootballEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#PityAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StaticMoodEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PityTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DrinkEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DailyEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#DrinkAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="BaseballEvent"/>
+              <owl:Class rdf:ID="GolflEvent"/>
+              <owl:Class rdf:about="#PingPongEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SurfingEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#WaterEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SurfingAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SurfActionTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#RunEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#RunAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -167,7 +220,15 @@
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BodyMechanicsActionTopic"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#RunActionTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#WarmUpEvent"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -175,24 +236,72 @@
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#DrinkEvent"/>
               <owl:Class rdf:about="#HappyEvent"/>
-              <owl:Class rdf:about="#CryEvent"/>
+              <owl:Class rdf:ID="Static_GladEvent"/>
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasResult"/>
+          <owl:ObjectProperty rdf:ID="hasResult"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="WearEvent">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#DailyEvent"/>
+      <owl:Class rdf:about="#SportEvent"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#WearAction"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Event"/>
+  <owl:Class rdf:ID="AngryEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#DisagreeAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StaticMoodEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#DisAgreeTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FishEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SportEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#FishAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#FootballEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BallEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#FootballAction"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
@@ -201,11 +310,41 @@
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#FootballActionTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ShootEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SportEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ShootAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasResult"/>
         </owl:onProperty>
         <owl:someValuesFrom>
-          <owl:Class rdf:ID="ColdEvent"/>
+          <owl:Class rdf:ID="Static_ScaredEvent"/>
         </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -230,6 +369,92 @@
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
+  <owl:Class rdf:ID="SadEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DreadTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DynamicMoodEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SadAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DynamicMoodEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MoodEvent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SwatEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DailyEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SwatAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="PayEvent"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Static_ScaredEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StaticMoodEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Static_ScaredAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#DreadTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEffect"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#ShootEvent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Distence"/>
   <owl:Class rdf:ID="SwimmingEvent">
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -241,185 +466,45 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
         <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SwimmingActionTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#WaterEvent"/>
-  </owl:Class>
-  <owl:Class rdf:ID="ShyEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ShyAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#DynamicMoodEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#WorryTopic"/>
-      </owl:Restriction>
+      <owl:Class rdf:about="#WaterEvent"/>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="#WalkEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#DailyEvent"/>
-    </rdfs:subClassOf>
+  <owl:Class rdf:ID="DepressedEvent">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#WalkAction"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#DepressedAction"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="DiseseEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="EmotionEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SeeDoctorActionTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SadAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasResult"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#HappyEvent"/>
-              <owl:Class rdf:about="#CryEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="GolflEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#BallEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#GolfAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GolfActionTopic"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="RowingBoatEvent">
-    <rdfs:subClassOf rdf:resource="#WaterEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#RowingBoatAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BoatingActionTopic"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#BallEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#BodybuilderEvent"/>
-              <owl:Class rdf:ID="DrinkEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DynamicMoodEvent"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#HappyEvent"/>
-              <owl:Class rdf:about="#CryEvent"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GriefTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTopic"/>
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasResult"/>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="WarmUpEvent"/>
-              <owl:Class rdf:about="#WalkEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#EmotionEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Event"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="EatingEvent">
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-        </owl:onProperty>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -428,6 +513,9 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -461,7 +549,7 @@
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#CryEvent"/>
+              <owl:Class rdf:ID="CryEvent"/>
               <owl:Class rdf:about="#HappyEvent"/>
               <owl:Class rdf:about="#Static_GladEvent"/>
             </owl:unionOf>
@@ -482,14 +570,53 @@
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="SurfingEvent">
-    <rdfs:subClassOf rdf:resource="#WaterEvent"/>
+  <owl:Class rdf:ID="FightEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SportEvent"/>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#FightAction"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SurfingAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEffect"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#AngryEvent"/>
+              <owl:Class rdf:about="#CryEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PhoneEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DailyEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#PhoneAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -497,12 +624,146 @@
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SurfActionTopic"/>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#MissTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DateActionTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#WalkEvent"/>
+              <owl:Class rdf:ID="WaitEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isMoreAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#HappyEvent"/>
+              <owl:Class rdf:about="#Static_GladEvent"/>
+              <owl:Class rdf:about="#CryEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasResult"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="Dynamic_ScaredEvent"/>
+              <owl:Class rdf:about="#CryEvent"/>
+              <owl:Class rdf:about="#HappyEvent"/>
+              <owl:Class rdf:about="#Static_GladEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="PingPongEvent">
-    <rdfs:subClassOf rdf:resource="#BallEvent"/>
+  <owl:Class rdf:about="#PayEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DailyEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#PayAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#ShoppingActionTopic"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#WalkEvent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#HappyEvent"/>
+              <owl:Class rdf:about="#Static_GladEvent"/>
+              <owl:Class rdf:about="#SadEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasResult"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MoodEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="EmotionEvent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PingPongEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BallEvent"/>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -520,16 +781,104 @@
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="FightEvent">
+  <owl:Class rdf:ID="WearEvent">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
+      <owl:Class rdf:about="#DailyEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#WearAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="ColdEvent"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#StaticMoodEvent">
+    <rdfs:subClassOf rdf:resource="#MoodEvent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#BaseballEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BallEvent"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#FightAction"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BaseballAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BallActionTopic"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#SportEvent">
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:about="#BasketballEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BallEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BasketballAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BasketballActionTopic"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DiseseEvent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EmotionEvent"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#SeeDoctorActionTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SadAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -537,70 +886,36 @@
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="AngryEvent"/>
+              <owl:Class rdf:about="#HappyEvent"/>
               <owl:Class rdf:about="#CryEvent"/>
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasEffect"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >true</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isInteractive"/>
+          <owl:ObjectProperty rdf:about="#hasResult"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="#WarmUpEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
-    </rdfs:subClassOf>
+  <owl:Class rdf:about="#DailyEvent">
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ShyEvent">
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#WarmupAction"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ShyAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DynamicMoodEvent"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#BallEvent"/>
-              <owl:Class rdf:ID="RunEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="FootballEvent">
-    <rdfs:subClassOf rdf:resource="#BallEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#FootballAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#FootballActionTopic"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
         </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#WorryTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -621,135 +936,30 @@
         <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#TiredAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="StaticMoodEvent"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#StaticMoodEvent"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="#WalkEvent"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasNextEvent"/>
         </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#CryEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#CryTopic"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#StaticMoodEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#CryAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#EatingEvent"/>
-              <owl:Class rdf:about="#AngryEvent"/>
-              <owl:Class rdf:about="#FightEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasEffect"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="DepressedEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#DepressedAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#DynamicMoodEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GriefTopic"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTopic"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="PityEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasEffect"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#PingPongEvent"/>
-              <owl:Class rdf:about="#BasketballEvent"/>
-              <owl:Class rdf:about="#FootballEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#PityAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#StaticMoodEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#PityTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#WalkEvent"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="RegretEvent">
-    <rdfs:subClassOf rdf:resource="#EmotionEvent"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EmotionEvent"/>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BowAction"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BowAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -758,24 +968,330 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</owl:hasValue>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#isInteractive"/>
         </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#AngryEvent"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEffect"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CleanEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="Dynamic_GladEvent"/>
+              <owl:Class rdf:about="#Static_GladEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasReference"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DailyEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#CleanAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
         <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >false</owl:hasValue>
+        >true</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isMoreAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BodyMechanicsEvent">
+    <rdfs:subClassOf rdf:resource="#SportEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BodyMechanicsActionTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasEffect"/>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
         <owl:someValuesFrom>
-          <owl:Class rdf:about="#AngryEvent"/>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#YogaAction"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#BoxAction"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#WeightliftingAction"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#WarmUpEvent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="BodybuilderEvent"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Static_GladEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#EatingEvent"/>
+              <owl:Class rdf:about="#RunEvent"/>
+              <owl:Class rdf:about="#BasketballEvent"/>
+              <owl:Class rdf:about="#FootballEvent"/>
+              <owl:Class rdf:about="#PhoneEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasEffect"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#StaticMoodEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Static_GladAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ColdEvent">
+    <rdfs:subClassOf rdf:resource="#DailyEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ColdAction"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#ChangeWeatherActionTopic"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#WearEvent"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DanceEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DancingActionTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GatherActionTopic"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SpringFestivalTopic"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#SportEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#AerobDanceAction"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#BalletDanceAction"/>
+              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#HipHopDanceAction"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasResult"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#HappyEvent"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Dynamic_GladEvent">
+    <rdfs:subClassOf rdf:resource="#DynamicMoodEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Dynamic_GladAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopic"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BallEvent">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#BodybuilderEvent"/>
+              <owl:Class rdf:about="#DrinkEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#HappyEvent"/>
+              <owl:Class rdf:about="#CryEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasResult"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#SportEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#WarmUpEvent"/>
+              <owl:Class rdf:about="#WalkEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BodybuilderEvent">
+    <rdfs:subClassOf rdf:resource="#SportEvent"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BodybuilderAction"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#BallEvent"/>
+              <owl:Class rdf:about="#BodyMechanicsEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BodyMechanicsActionTopic"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasResult"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#HappyEvent"/>
+              <owl:Class rdf:about="#CryEvent"/>
+            </owl:unionOf>
+          </owl:Class>
         </owl:someValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -815,32 +1331,47 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#StaticMoodEvent"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#StaticMoodEvent"/>
   </owl:Class>
-  <owl:Class rdf:ID="SwatEvent">
+  <owl:Class rdf:about="#EmotionEvent">
+    <rdfs:subClassOf rdf:resource="#Event"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CryEvent">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#DailyEvent"/>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#CryTopic"/>
+      </owl:Restriction>
     </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#StaticMoodEvent"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SwatAction"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#CryAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#EatingEvent"/>
+              <owl:Class rdf:about="#AngryEvent"/>
+              <owl:Class rdf:about="#FightEvent"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
+          <owl:ObjectProperty rdf:about="#hasEffect"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#PayEvent"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="WaitEvent">
+  <owl:Class rdf:about="#WaitEvent">
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -849,16 +1380,14 @@
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="ShakeEvent"/>
+              <owl:Class rdf:about="#ShakeEvent"/>
               <owl:Class rdf:about="#PhoneEvent"/>
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#DailyEvent"/>
-    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DailyEvent"/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -885,112 +1414,23 @@
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:about="#PhoneEvent"/>
-        </owl:someValuesFrom>
+        <owl:someValuesFrom rdf:resource="#PhoneEvent"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasPreEvent"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="#DrinkEvent">
+  <owl:Class rdf:ID="RowingBoatEvent">
     <rdfs:subClassOf>
-      <owl:Class rdf:about="#DailyEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#DrinkAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="BaseballEvent"/>
-              <owl:Class rdf:about="#GolflEvent"/>
-              <owl:Class rdf:about="#PingPongEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#BodyMechanicsEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BodyMechanicsActionTopic"/>
-      </owl:Restriction>
+      <owl:Class rdf:about="#WaterEvent"/>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#YogaAction"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#BoxAction"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#WeightliftingAction"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="#WarmUpEvent"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#BodybuilderEvent"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="FishEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#FishAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#PhoneEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#DailyEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#PhoneAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#RowingBoatAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -998,54 +1438,14 @@
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
         </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#MissTopic"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DateActionTopic"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BoatingActionTopic"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#WaterEvent">
+    <rdfs:subClassOf rdf:resource="#SportEvent"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#WalkEvent"/>
-              <owl:Class rdf:about="#WaitEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isInteractive"/>
-        </owl:onProperty>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >true</owl:hasValue>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >true</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isMoreAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasResult"/>
-        </owl:onProperty>
         <owl:someValuesFrom>
           <owl:Class>
             <owl:unionOf rdf:parseType="Collection">
@@ -1055,250 +1455,17 @@
             </owl:unionOf>
           </owl:Class>
         </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:ID="Dynamic_ScaredEvent"/>
-              <owl:Class rdf:about="#CryEvent"/>
-              <owl:Class rdf:about="#HappyEvent"/>
-              <owl:Class rdf:about="#Static_GladEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#ShakeEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#DailyEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ShakeAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#WalkEvent"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="#HappyEvent"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasEffect"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >true</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isInteractive"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#DynamicMoodEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="MoodEvent"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#RunEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#RunAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#RunActionTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#WarmUpEvent"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasResult"/>
         </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#DrinkEvent"/>
-              <owl:Class rdf:about="#HappyEvent"/>
-              <owl:Class rdf:about="#Static_GladEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >false</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isInteractive"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="DanceEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DancingActionTopic"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#GatherActionTopic"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SpringFestivalTopic"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#AerobDanceAction"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#BalletDanceAction"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#HipHopDanceAction"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasResult"/>
+          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
         </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="#HappyEvent"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#DailyEvent">
-    <rdfs:subClassOf rdf:resource="#Event"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Static_GladEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#EatingEvent"/>
-              <owl:Class rdf:about="#RunEvent"/>
-              <owl:Class rdf:about="#BasketballEvent"/>
-              <owl:Class rdf:about="#FootballEvent"/>
-              <owl:Class rdf:about="#PhoneEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasEffect"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#StaticMoodEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Static_GladAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#StaticMoodEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#MoodEvent"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="Dynamic_GladEvent">
-    <rdfs:subClassOf rdf:resource="#DynamicMoodEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Dynamic_GladAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GladTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#AngryEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#DisagreeAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#StaticMoodEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#DisAgreeTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#SadEvent"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
@@ -1329,201 +1496,47 @@
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="#MoodEvent">
-    <rdfs:subClassOf rdf:resource="#EmotionEvent"/>
-  </owl:Class>
-  <owl:Class rdf:about="#ColdEvent">
-    <rdfs:subClassOf rdf:resource="#DailyEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ColdAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#ChangeWeatherActionTopic"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="#WearEvent"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasNextEvent"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#BaseballEvent">
+  <owl:Class rdf:about="#GolflEvent">
     <rdfs:subClassOf rdf:resource="#BallEvent"/>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#BaseballAction"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitAction"/>
         </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#GolfAction"/>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#BallActionTopic"/>
+        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#GolfActionTopic"/>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:ID="SkiingEvent">
-    <rdfs:subClassOf rdf:resource="#WaterEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SkiingAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#WaterActionTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="ShootEvent">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#SportEvent"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#ShootAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class rdf:ID="Static_ScaredEvent"/>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasResult"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isInteractive"/>
-        </owl:onProperty>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >false</owl:hasValue>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#SadEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#DreadTopic"/>
-              <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1290308675.owl#SadTopic"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#DynamicMoodEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#SadAction"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="CleanEvent">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="hasReference"/>
-        </owl:onProperty>
-        <owl:someValuesFrom>
-          <owl:Class>
-            <owl:unionOf rdf:parseType="Collection">
-              <owl:Class rdf:about="#Dynamic_GladEvent"/>
-              <owl:Class rdf:about="#Static_GladEvent"/>
-            </owl:unionOf>
-          </owl:Class>
-        </owl:someValuesFrom>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="#DailyEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#CleanAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >true</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isMoreAction"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#SportEvent">
-    <rdfs:subClassOf rdf:resource="#Event"/>
-  </owl:Class>
-  <owl:Class rdf:about="#Static_ScaredEvent">
-    <rdfs:subClassOf rdf:resource="#StaticMoodEvent"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitAction"/>
-        </owl:onProperty>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Static_ScaredAction"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#DreadTopic"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasSuitTopic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="#ShootEvent"/>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasEffect"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#hasEffect">
+  <owl:ObjectProperty rdf:ID="hasDistence">
+    <rdfs:range rdf:resource="#Distence"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasResult">
     <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="#hasResult"/>
+      <owl:ObjectProperty rdf:about="#hasEffect"/>
     </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasSuitAction">
+    <rdfs:domain rdf:resource="#Event"/>
+    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Action"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasNextEvent">
+    <rdfs:domain rdf:resource="#Event"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasPreEvent"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="#Event"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasEffect">
+    <owl:inverseOf rdf:resource="#hasResult"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasReference">
     <rdfs:range rdf:resource="http://www.ontologyportal.org/translations/SUMO.owl.txt#SelfConnectedObject"/>
@@ -1532,52 +1545,22 @@
     <rdfs:range rdf:resource="http://www.ontologyportal.org/translations/SUMO.owl.txt#Human"/>
     <rdfs:domain rdf:resource="#Event"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="hasDistence">
-    <rdfs:range rdf:resource="#Distence"/>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasSuitTopic">
     <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#Topic"/>
     <rdfs:domain rdf:resource="#Event"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#hasSuitAction">
-    <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1306283939.owl#Action"/>
-    <rdfs:domain rdf:resource="#Event"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#hasNextEvent">
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="#hasPreEvent"/>
-    </owl:inverseOf>
-    <rdfs:domain rdf:resource="#Event"/>
-    <rdfs:range rdf:resource="#Event"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#hasResult">
-    <owl:inverseOf rdf:resource="#hasEffect"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasSuitTemplate">
     <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#Template"/>
     <rdfs:domain rdf:resource="#Event"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasPreEvent">
-    <owl:inverseOf rdf:resource="#hasNextEvent"/>
-    <rdfs:domain rdf:resource="#Event"/>
-    <rdfs:range rdf:resource="#Event"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdfs:range rdf:resource="#Event"/>
+    <rdfs:domain rdf:resource="#Event"/>
+    <owl:inverseOf rdf:resource="#hasNextEvent"/>
   </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#isMoreAction">
-    <rdfs:range>
-      <owl:DataRange>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-          >true</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-            >false</rdf:first>
-          </rdf:rest>
-        </owl:oneOf>
-      </owl:DataRange>
-    </rdfs:range>
+  <owl:DatatypeProperty rdf:ID="SubjectNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#isInteractive">
     <rdfs:range>
@@ -1594,60 +1577,21 @@
       </owl:DataRange>
     </rdfs:range>
   </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="SubjectNumber">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <owl:DatatypeProperty rdf:about="#isMoreAction">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >false</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+          >true</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
   </owl:DatatypeProperty>
-  <WalkEvent rdf:ID="WalkEventIndividual">
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#walk1Template"/>
-  </WalkEvent>
-  <TIredEvent rdf:ID="TIredEvent_1">
-    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_night_bed.ma"/>
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#tiredTemplate"/>
-  </TIredEvent>
-  <DrinkEvent rdf:ID="DrinkEventIndividual">
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#drinkTemplate"/>
-  </DrinkEvent>
-  <CleanEvent rdf:ID="CleanEventtIndividual">
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#washingTemplate"/>
-  </CleanEvent>
-  <PityEvent rdf:ID="PityEventIndividual">
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#pityTemplate"/>
-  </PityEvent>
-  <p3:EatAction rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#eatingsoup80_33"/>
-  <PhoneEvent rdf:ID="PhoneEventIndividual">
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#phoneTemplate"/>
-  </PhoneEvent>
-  <RegretEvent rdf:ID="RegretEvent_12">
-    <hasDistence>
-      <Distence rdf:ID="Near"/>
-    </hasDistence>
-  </RegretEvent>
-  <EatingEvent rdf:ID="EatingEvent_1">
-    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_restaurantTable_table.ma"/>
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#eatTemplate"/>
-    <hasDistence>
-      <Distence rdf:ID="Default"/>
-    </hasDistence>
-  </EatingEvent>
-  <ShakeEvent rdf:ID="ShakeEventIndividual">
-    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#shankhandTemplate"/>
-    <hasDistence rdf:resource="#Near"/>
-  </ShakeEvent>
-  <BasketballEvent rdf:ID="BaseballEvent_1">
-    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_basketball_basketball.ma"/>
-    <hasDistence rdf:resource="#Near"/>
-  </BasketballEvent>
-  <owl:DataRange>
-    <owl:oneOf rdf:parseType="Resource">
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-      >true</rdf:first>
-      <rdf:rest rdf:parseType="Resource">
-        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-        >false</rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-      </rdf:rest>
-    </owl:oneOf>
-  </owl:DataRange>
   <Static_GladEvent rdf:ID="Static_GladEvent_6">
     <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#gladnessTemplate"/>
   </Static_GladEvent>
@@ -1655,20 +1599,71 @@
   <Static_ScaredEvent rdf:ID="Static_ScaredEventIndividual">
     <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#dreadTemplate"/>
   </Static_ScaredEvent>
+  <EatingEvent rdf:ID="EatingEvent_1">
+    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_restaurantTable_table.ma"/>
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#eatTemplate"/>
+    <hasDistence>
+      <Distence rdf:ID="Default"/>
+    </hasDistence>
+  </EatingEvent>
+  <PingPongEvent rdf:ID="PingPongEvent_4">
+    <hasDistence>
+      <Distence rdf:ID="Near"/>
+    </hasDistence>
+    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_pingpong_table.ma"/>
+  </PingPongEvent>
   <ColdEvent rdf:ID="ColdEventIndividual">
     <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#TemperatureTemplate_cold"/>
   </ColdEvent>
+  <PityEvent rdf:ID="PityEventIndividual">
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#pityTemplate"/>
+  </PityEvent>
+  <CleanEvent rdf:ID="CleanEventtIndividual">
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#washingTemplate"/>
+  </CleanEvent>
   <Distence rdf:ID="Far"/>
+  <WalkEvent rdf:ID="WalkEventIndividual">
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#walk1Template"/>
+  </WalkEvent>
+  <ShakeEvent rdf:ID="ShakeEventIndividual">
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#shankhandTemplate"/>
+    <hasDistence rdf:resource="#Near"/>
+  </ShakeEvent>
+  <p3:EatAction rdf:about="http://www.owl-ontologies.com/Ontology1306283939.owl#eatingsoup80_33"/>
+  <RegretEvent rdf:ID="RegretEvent_12">
+    <hasDistence rdf:resource="#Near"/>
+  </RegretEvent>
+  <PhoneEvent rdf:ID="PhoneEventIndividual">
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#phoneTemplate"/>
+  </PhoneEvent>
+  <DrinkEvent rdf:ID="DrinkEventIndividual">
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#drinkTemplate"/>
+  </DrinkEvent>
+  <TIredEvent rdf:ID="TIredEvent_1">
+    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_night_bed.ma"/>
+    <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#tiredTemplate"/>
+  </TIredEvent>
   <CryEvent rdf:ID="CryEventIndividual">
     <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#sadTemplate"/>
   </CryEvent>
   <HappyEvent rdf:ID="HappyEventIndividual">
     <hasSuitTemplate rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#gladnessTemplate"/>
   </HappyEvent>
-  <PingPongEvent rdf:ID="PingPongEvent_4">
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+      >true</rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</rdf:first>
+      </rdf:rest>
+    </owl:oneOf>
+  </owl:DataRange>
+  <BasketballEvent rdf:ID="BaseballEvent_1">
+    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_basketball_basketball.ma"/>
     <hasDistence rdf:resource="#Near"/>
-    <hasReference rdf:resource="http://www.owl-ontologies.com/Ontology1290308675.owl#M_pingpong_table.ma"/>
-  </PingPongEvent>
+  </BasketballEvent>
 </rdf:RDF>
 
 <!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->
